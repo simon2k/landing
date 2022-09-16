@@ -66,7 +66,7 @@ jobs:
         run: |
           cd landing
           ls
-          kustomize edit set image ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${GITHUB_SHA}
+          kustomize edit set image "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${GITHUB_SHA}"
           git add .
           git commit -m "Set `app` image tag to `sha-${GITHUB_SHA}`"
           git push
